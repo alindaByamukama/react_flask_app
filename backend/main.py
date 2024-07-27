@@ -8,6 +8,12 @@ def get_contacts():
     json_contacts = list(map(lambda x: x.to_json(), contacts))
     return jsonify({"contacts": json_contacts})
 
+@app.route("/create_contact", methods=]"POST")
+def create_contact():
+    first_name = request.josn.get("firstName")
+    last_name = request.josn.get("lastName")
+    email = request.josn.get("email")
+
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
