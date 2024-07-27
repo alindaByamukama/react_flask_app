@@ -13,6 +13,12 @@ def create_contact():
     first_name = request.josn.get("firstName")
     last_name = request.josn.get("lastName")
     email = request.josn.get("email")
+    
+    if not first_name or not last_name or not email:
+        return(
+            jsonify({"message": "You must include a first name, last name and email."}),
+            400,
+        )
 
 if __name__ == "__main__":
     with app.app_context():
