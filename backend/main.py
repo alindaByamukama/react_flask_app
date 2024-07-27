@@ -29,6 +29,22 @@ def create_contact():
     
     return jsonify({"message": "Contact created!"}), 201
 
+@app.route("/update_contact/<int:user_id>")
+def update_contact(user_id):
+    contact = Contact.query.get(user_id)
+    
+    if not Contact:
+        return jsonify({"message": "Contact not found"}), 400
+    
+    data = request.json
+    contact.first_name = data.get("firstName", contact.first_name)
+    contact.last_name = data.get("lastName", contact.last_name)
+    contact.email = data.get("email", contact.email)
+
+    db.session.commit()
+
+    return jsonify({"message": "Contact updated"}), 200
+    
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
