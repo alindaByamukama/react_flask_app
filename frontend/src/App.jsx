@@ -5,7 +5,7 @@ import './App.css'
 
 function App() {
   const [contacts, setContacts] = useState([
-    {firstName: "Susan", lastName: "Pearl", email: "email", id: 1}
+    { firstName: 'Susan', lastName: 'Pearl', email: 'email', id: 1 },
   ])
 
   // useEffect(() => {
