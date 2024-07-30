@@ -10,9 +10,9 @@ def get_contacts():
 
 @app.route("/create_contact", methods=["POST"])
 def create_contact():
-    first_name = request.josn.get("firstName")
-    last_name = request.josn.get("lastName")
-    email = request.josn.get("email")
+    first_name = request.json.get("firstName")
+    last_name = request.json.get("lastName")
+    email = request.json.get("email")
     
     if not first_name or not last_name or not email:
         return(
