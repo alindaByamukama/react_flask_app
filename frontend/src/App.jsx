@@ -8,16 +8,16 @@ function App() {
     { firstName: 'Susan', lastName: 'Pearl', email: 'email', id: 1 },
   ])
 
-  // useEffect(() => {
-  //   fetchContacts()
-  // }, [])
+  useEffect(() => {
+    fetchContacts()
+  }, [])
 
-  // const fetchContacts = async () => {
-  //   const response = await fetch("http://127.0.0.1:5000/contacts")
-  //   const data = await response.json()
-  //   setContacts(data.contacts)
-  //   console.log(data.contacts)
-  // }
+  const fetchContacts = async () => {
+    const response = await fetch("http://127.0.0.1:5000/contacts")
+    const data = await response.json()
+    setContacts(data.contacts)
+    console.log(data.contacts)
+  }
 
   return (
     <>
