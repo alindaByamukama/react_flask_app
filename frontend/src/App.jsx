@@ -4,9 +4,7 @@ import ContactForm from './ContactForm'
 import './App.css'
 
 function App() {
-  const [contacts, setContacts] = useState([
-    { firstName: 'Susan', lastName: 'Pearl', email: 'email', id: 1 },
-  ])
+  const [contacts, setContacts] = useState([])
 
   useEffect(() => {
     fetchContacts()
