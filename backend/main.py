@@ -8,7 +8,7 @@ def get_contacts():
     json_contacts = list(map(lambda x: x.to_json(), contacts))
     return jsonify({"contacts": json_contacts})
 
-@app.route("/create_contact", methods=]"POST")
+@app.route("/create_contact", methods=["POST"])
 def create_contact():
     first_name = request.josn.get("firstName")
     last_name = request.josn.get("lastName")
@@ -29,7 +29,7 @@ def create_contact():
     
     return jsonify({"message": "Contact created!"}), 201
 
-@app.route("/update_contact/<int:user_id>")
+@app.route("/update_contact/<int:user_id>", methods=["PATCH"])
 def update_contact(user_id):
     contact = Contact.query.get(user_id)
     
@@ -45,7 +45,7 @@ def update_contact(user_id):
 
     return jsonify({"message": "Contact updated"}), 200
 
-@app.route("/delete_contact/<int:user_id>")
+@app.route("/delete_contact/<int:user_id>", methods={"DELETE"})
 def delete_contact(user_id):
     contact = Contact.query.get(user_id)
 
