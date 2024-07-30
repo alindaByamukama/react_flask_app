@@ -4,6 +4,13 @@ import './App.css'
 function App() {
   const [contacts, setContacts] = useState([])
 
+  const fetchContacts = async () => {
+    const response = await fetch("http://127.0.0.1:500/contacts")
+    const data = await response.json()
+    setContacts(data.contacts)
+    console.log(data.contacts)
+  }
+
   return (
     <>
       
