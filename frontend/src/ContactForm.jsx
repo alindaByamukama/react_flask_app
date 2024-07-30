@@ -23,8 +23,8 @@ const ContactForm = ({}) => {
     }
     const response = await fetch(url, options)
     if (response.status !== 201 && response.status !== 200) {
-      const data = await response.json()
-      alert(data.message)
+      const dataDetails = await response.json()
+      alert(dataDetails.message)
     } else {
       // success
     }
